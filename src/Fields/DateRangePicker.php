@@ -108,7 +108,7 @@ class DateRangePicker extends Field implements HasAffixActions
                     Action::make('clear')
                         ->action(function($livewire, $action){
                             $livewire->dispatch('clear',id: $livewire->getId());
-                            $action->icon('heroicon-m-calendar-days');
+//                            $action->icon('heroicon-m-calendar-days');
                         })
                         ->icon('heroicon-m-calendar-days')
                 );

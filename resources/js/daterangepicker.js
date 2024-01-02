@@ -154,6 +154,8 @@ export default (Alpine) => {
                     })
 
                     window.addEventListener('clear', (event) => {
+                        console.log('detail',event.detail)
+                        console.log('detail',name)
                         if(event.detail.id === name) {
                             state = null;
                             handleValueChangeUsing(null, name);
