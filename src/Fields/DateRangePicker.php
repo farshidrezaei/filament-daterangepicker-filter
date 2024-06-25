@@ -38,6 +38,8 @@ class DateRangePicker extends Field implements HasAffixActions
     protected bool | Closure $autoApply = false;
     protected bool | Closure $linkedCalendars = true;
     protected bool | Closure $singleCalendar = false;
+    protected bool | Closure $jalali = false;
+
 
     protected CarbonInterface|string|Closure|null $maxDate = null;
     protected CarbonInterface|string|Closure|null $minDate = null;
@@ -484,6 +486,13 @@ class DateRangePicker extends Field implements HasAffixActions
     public function singleCalendar(bool | Closure $condition = true) : static
     {
         $this->singleCalendar = $condition;
+
+        return $this;
+    }
+
+    public function jalali(bool | Closure $condition = true) : static
+    {
+        $this->jalali = $condition;
 
         return $this;
     }

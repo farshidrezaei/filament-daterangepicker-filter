@@ -72,9 +72,18 @@ class DateRangeFilter extends BaseFilter
 
     protected bool | Closure $disableClear = false;
 
+    protected bool | Closure $jalali = false;
+
     public function disableClear(bool|Closure $disable = true) : static
     {
         $this->disableClear = $disable;
+
+        return $this;
+    }
+
+    public function jalali(bool|Closure $$jalali = true) : static
+    {
+        $this->jalali = $jalali;
 
         return $this;
     }
@@ -185,6 +194,7 @@ class DateRangeFilter extends BaseFilter
                 ->disableCustomRange($this->disableCustomRange)
                 ->separator($this->separator)
                 ->disableClear($this->disableClear)
+                ->jalali($this->jalali)
         ];
     }
 
